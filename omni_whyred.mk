@@ -22,10 +22,6 @@ $(call inherit-product, build/target/product/embedded.mk)
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
-# Time Zone data for recovery
-PRODUCT_COPY_FILES += \
-    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
-
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := whyred
 PRODUCT_NAME := omni_whyred
@@ -37,8 +33,5 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.secure=1 \
     ro.adb.secure=0 \
-    ro.allow.mock.location=0 \
-    sys.usb.controller=a800000.dwc3 \
-    sys.usb.rndis.func.name=rndis_bam \
-    sys.usb.rmnet.func.name=rmnet_bam
+    ro.allow.mock.location=0
 
